@@ -1,0 +1,14 @@
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.csproj.ResolveComReference.cache
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\bin\Debug\VideoPlayer.exe
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\bin\Debug\VideoPlayer.pdb
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\bin\Debug\Interop.WMPLib.dll
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form1.resources
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Properties.Resources.resources
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.csproj.GenerateResource.Cache
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.exe
+C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.pdb
+C:\Users\juanluis\Documents\Visual Studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form2.resources
+C:\Users\juanluis\Documents\Visual Studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form3.resources

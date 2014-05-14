@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoPlayer", "VideoPlayer\VideoPlayer.csproj", "{AD303F1E-D2FE-4278-8DAF-9A8C4B915EA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD303F1E-D2FE-4278-8DAF-9A8C4B915EA6}.Debug|x86.ActiveCfg = Debug|x86
+		{AD303F1E-D2FE-4278-8DAF-9A8C4B915EA6}.Debug|x86.Build.0 = Debug|x86
+		{AD303F1E-D2FE-4278-8DAF-9A8C4B915EA6}.Release|x86.ActiveCfg = Release|x86
+		{AD303F1E-D2FE-4278-8DAF-9A8C4B915EA6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
