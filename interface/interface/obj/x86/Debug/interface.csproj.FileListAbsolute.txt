@@ -1,0 +1,8 @@
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\bin\Debug\interface.exe
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\bin\Debug\interface.pdb
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\obj\x86\Debug\interface.Form1.resources
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\obj\x86\Debug\interface.Properties.Resources.resources
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\obj\x86\Debug\interface.csproj.GenerateResource.Cache
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\obj\x86\Debug\interface.exe
+C:\Users\juanluis\documents\visual studio 2010\Projects\interface\interface\obj\x86\Debug\interface.pdb
+C:\Users\juanluis\Documents\Visual Studio 2010\Projects\interface\interface\obj\x86\Debug\interface.csprojResolveAssemblyReference.cache
