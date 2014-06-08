@@ -12,3 +12,4 @@ C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\
 C:\Users\juanluis\documents\visual studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.pdb
 C:\Users\juanluis\Documents\Visual Studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form2.resources
 C:\Users\juanluis\Documents\Visual Studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form3.resources
+C:\Users\juanluis\Documents\Visual Studio 2010\Projects\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form4.resources
