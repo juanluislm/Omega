@@ -57,7 +57,7 @@ namespace VideoPlayer
             OpenFileDialog d1 = new OpenFileDialog();
             d1.Filter = "Movie Files|*.wmv|MPEG Files|*.mpeg|Avi Files|*.avi";
             d1.FilterIndex = 1;
-            startArd();
+            //startArd();
             if (d1.ShowDialog() == System.Windows.Forms.DialogResult.OK) {              
                 MessageBox.Show(d1.FileName);
                 name = d1.FileName;
@@ -80,9 +80,9 @@ namespace VideoPlayer
                 axWindowsMediaPlayer1.URL = d1.FileName;
                 
             }
-            Form3 child = new Form3();
+           // Form3 child = new Form3();
             //child.MdiParent = this;
-            child.ShowDialog();
+            //child.ShowDialog();
         }
 
         private void detectToolStripMenuItem_Click(object sender, EventArgs e)

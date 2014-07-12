@@ -35,25 +35,25 @@ namespace @interface
         private void onbutton_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-            serialPort1.Write("3");
+            serialPort1.Write("131");
         }
 
         private void offbutton_Click(object sender, EventArgs e)
         {
             if(serialPort1.IsOpen)
-            serialPort1.Write("2");
+            serialPort1.Write("130");
         }
 
         private void pin8on_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-                serialPort1.Write("1");
+                serialPort1.Write("081");
         }
 
         private void pin8off_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-                serialPort1.Write("0");
+                serialPort1.Write("080");
         }
 
 
