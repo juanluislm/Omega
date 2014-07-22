@@ -69,6 +69,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(817, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // findVideoToolStripMenuItem
             // 
@@ -91,28 +92,28 @@
             // detectToolStripMenuItem
             // 
             this.detectToolStripMenuItem.Name = "detectToolStripMenuItem";
-            this.detectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.detectToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.detectToolStripMenuItem.Text = "Detect";
             this.detectToolStripMenuItem.Click += new System.EventHandler(this.detectToolStripMenuItem_Click);
             // 
             // enableToolStripMenuItem
             // 
             this.enableToolStripMenuItem.Name = "enableToolStripMenuItem";
-            this.enableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.enableToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.enableToolStripMenuItem.Text = "Enable";
             this.enableToolStripMenuItem.Click += new System.EventHandler(this.enableToolStripMenuItem_Click);
             // 
             // disableToolStripMenuItem
             // 
             this.disableToolStripMenuItem.Name = "disableToolStripMenuItem";
-            this.disableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disableToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.disableToolStripMenuItem.Text = "Disable";
             this.disableToolStripMenuItem.Click += new System.EventHandler(this.disableToolStripMenuItem_Click);
             // 
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.otherToolStripMenuItem.Text = "Other";
             this.otherToolStripMenuItem.Click += new System.EventHandler(this.otherToolStripMenuItem_Click);
             // 
@@ -126,6 +127,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // timer2
             // 
@@ -137,6 +139,7 @@
             this.pin8l.Name = "pin8l";
             this.pin8l.Size = new System.Drawing.Size(100, 20);
             this.pin8l.TabIndex = 3;
+            this.pin8l.TextChanged += new System.EventHandler(this.pin8l_TextChanged);
             // 
             // pin8h
             // 
@@ -144,6 +147,7 @@
             this.pin8h.Name = "pin8h";
             this.pin8h.Size = new System.Drawing.Size(100, 20);
             this.pin8h.TabIndex = 4;
+            this.pin8h.TextChanged += new System.EventHandler(this.pin8h_TextChanged);
             // 
             // pin13l
             // 
@@ -151,6 +155,7 @@
             this.pin13l.Name = "pin13l";
             this.pin13l.Size = new System.Drawing.Size(100, 20);
             this.pin13l.TabIndex = 5;
+            this.pin13l.TextChanged += new System.EventHandler(this.pin13l_TextChanged);
             // 
             // pin13h
             // 
@@ -158,6 +163,7 @@
             this.pin13h.Name = "pin13h";
             this.pin13h.Size = new System.Drawing.Size(100, 20);
             this.pin13h.TabIndex = 6;
+            this.pin13h.TextChanged += new System.EventHandler(this.pin13h_TextChanged);
             // 
             // Form1
             // 
