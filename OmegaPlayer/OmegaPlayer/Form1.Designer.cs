@@ -1,4 +1,4 @@
-﻿namespace VideoPlayer
+﻿namespace OmegaPlayer
 {
     partial class Form1
     {
@@ -34,25 +34,24 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.findVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omegaVestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // axWindowsMediaPlayer1
             // 
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 27);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 24);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(817, 461);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(842, 498);
             this.axWindowsMediaPlayer1.TabIndex = 0;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // menuStrip1
             // 
@@ -61,10 +60,9 @@
             this.omegaVestToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(842, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // findVideoToolStripMenuItem
             // 
@@ -76,62 +74,53 @@
             // omegaVestToolStripMenuItem
             // 
             this.omegaVestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.detectToolStripMenuItem,
-            this.enableToolStripMenuItem,
-            this.disableToolStripMenuItem,
-            this.otherToolStripMenuItem});
+            this.connectToolStripMenuItem,
+            this.disconnectToolStripMenuItem});
             this.omegaVestToolStripMenuItem.Name = "omegaVestToolStripMenuItem";
             this.omegaVestToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.omegaVestToolStripMenuItem.Text = "Omega Vest";
             // 
-            // detectToolStripMenuItem
+            // connectToolStripMenuItem
             // 
-            this.detectToolStripMenuItem.Name = "detectToolStripMenuItem";
-            this.detectToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.detectToolStripMenuItem.Text = "Detect";
-            this.detectToolStripMenuItem.Click += new System.EventHandler(this.detectToolStripMenuItem_Click);
+            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.connectToolStripMenuItem.Text = "Connect";
+            this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
             // 
-            // enableToolStripMenuItem
+            // disconnectToolStripMenuItem
             // 
-            this.enableToolStripMenuItem.Name = "enableToolStripMenuItem";
-            this.enableToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.enableToolStripMenuItem.Text = "Enable";
-            this.enableToolStripMenuItem.Click += new System.EventHandler(this.enableToolStripMenuItem_Click);
-            // 
-            // disableToolStripMenuItem
-            // 
-            this.disableToolStripMenuItem.Name = "disableToolStripMenuItem";
-            this.disableToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.disableToolStripMenuItem.Text = "Disable";
-            this.disableToolStripMenuItem.Click += new System.EventHandler(this.disableToolStripMenuItem_Click);
-            // 
-            // otherToolStripMenuItem
-            // 
-            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.otherToolStripMenuItem.Text = "Other";
-            this.otherToolStripMenuItem.Click += new System.EventHandler(this.otherToolStripMenuItem_Click);
+            this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.disconnectToolStripMenuItem.Text = "Disconnect";
+            this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // serialPort1
             // 
             this.serialPort1.PortName = "COM3";
             // 
-            // timer2
+            // timer1
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(260, 500);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(817, 487);
+            this.ClientSize = new System.Drawing.Size(842, 522);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -146,12 +135,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem findVideoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem omegaVestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem disableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disconnectToolStripMenuItem;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+
     }
 }
 

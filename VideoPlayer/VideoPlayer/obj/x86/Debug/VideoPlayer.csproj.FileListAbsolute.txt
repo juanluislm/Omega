@@ -29,3 +29,8 @@ C:\Users\Hanson\Documents\GitHub\Omega\VideoPlayer\VideoPlayer\obj\x86\Debug\Vid
 C:\Users\Hanson\Documents\GitHub\Omega\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Form4.resources
 C:\Users\Hanson\Documents\GitHub\Omega\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.Properties.Resources.resources
 C:\Users\Hanson\Documents\GitHub\Omega\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.csproj.GenerateResource.Cache
+C:\Users\Hanson\Documents\GitHub\Omega Vest\VideoPlayer\VideoPlayer\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Hanson\Documents\GitHub\Omega Vest\VideoPlayer\VideoPlayer\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Hanson\Documents\GitHub\Omega Vest\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.csproj.ResolveComReference.cache
+C:\Users\Hanson\Documents\GitHub\Omega Vest\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.exe
+C:\Users\Hanson\Documents\GitHub\Omega Vest\VideoPlayer\VideoPlayer\obj\x86\Debug\VideoPlayer.pdb

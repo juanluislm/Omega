@@ -22,7 +22,7 @@ namespace VideoPlayer
         public Form1()
         {
             InitializeComponent();
-            this.Text = "Omega Vest"; //Name of form
+            this.Text = "Omega Player"; //Name of form
         }
 
         public void startArd()
@@ -86,8 +86,8 @@ namespace VideoPlayer
                 if(File.Exists(csvname)) testParse = parseCSV(csvname);
                 timer2.Enabled = true;
                 timer2.Start();
-                timer2.Interval = 500;
-                axWindowsMediaPlayer1.URL = d1.FileName; 
+                timer2.Interval = 200;
+                axWindowsMediaPlayer1.URL = d1.FileName;
             }
         }
 
@@ -135,7 +135,7 @@ namespace VideoPlayer
                 return;
             }
             int cursorPosition = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            textBox1.Text = cursorPosition.ToString(); //DateTime.Now.ToString("HH:mm:ss");
+            //textBox1.Text = cursorPosition.ToString(); //DateTime.Now.ToString("HH:mm:ss");
             //we are going to compare
             listContent = testParse[listposition].Split(',');
             int upper = convertTimeToSec_7(listContent[1]);
