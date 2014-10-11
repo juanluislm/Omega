@@ -88,7 +88,7 @@
             this.pin8on.Name = "pin8on";
             this.pin8on.Size = new System.Drawing.Size(164, 49);
             this.pin8on.TabIndex = 4;
-            this.pin8on.Text = "8 on";
+            this.pin8on.Text = "9 on";
             this.pin8on.UseVisualStyleBackColor = true;
             this.pin8on.Click += new System.EventHandler(this.pin8on_Click);
             // 
@@ -98,7 +98,7 @@
             this.pin8off.Name = "pin8off";
             this.pin8off.Size = new System.Drawing.Size(164, 49);
             this.pin8off.TabIndex = 5;
-            this.pin8off.Text = "8 off";
+            this.pin8off.Text = "9 off";
             this.pin8off.UseVisualStyleBackColor = true;
             this.pin8off.Click += new System.EventHandler(this.pin8off_Click);
             // 

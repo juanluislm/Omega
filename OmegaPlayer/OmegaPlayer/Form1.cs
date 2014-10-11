@@ -16,9 +16,9 @@ namespace OmegaPlayer
     {
         string csvname;
         int listposition = 0;
-        int upper = 0;
-        int lower = 0;
-        int current = 0;
+        float upper = 0;
+        float lower = 0;
+        float current = 0;
         string[] listContent;
         List<string> testParse;
 
@@ -84,11 +84,11 @@ namespace OmegaPlayer
                 }
                 if (File.Exists(csvname)) testParse = parseCSV(csvname);
                 listContent = testParse[listposition].Split(',');
-                int upper = convertTimeToSec(listContent[1]);
-                int lower = convertTimeToSec(listContent[0]);
+                upper = convertTimeToSec(listContent[1]);
+                lower = convertTimeToSec(listContent[0]);
                 timer1.Enabled = true;
                 timer1.Start();
-                timer1.Interval = 50;
+                timer1.Interval = 100;
                 axWindowsMediaPlayer1.URL = d1.FileName;
             }
         }
@@ -124,52 +124,59 @@ namespace OmegaPlayer
             return new string(chars);
         }
 
-        int convertTimeToSec(string someString)
+        float convertTimeToSec(string someString)
         {
-            int timeInSeconds;
+            float timeInSeconds;
             int hour = (someString[0] - '0') * 10 + someString[1] - '0';
             int minute = (someString[3] - '0') * 10 + someString[4] - '0';
             int second = (someString[6] - '0') * 10 + someString[7] - '0';
 
-            timeInSeconds = hour * 3600 + minute * 60 + second;
+            timeInSeconds = (float) hour * 3600 + minute * 60 + second;
 
             return timeInSeconds;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           /* if (!serialPort1.IsOpen)
+            if (!serialPort1.IsOpen)
             {
-                return;
-            }*/
-            if (axWindowsMediaPlayer1.playState != WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                //serialPort1.Write("080");
-                //serialPort1.Write("130");
                 return;
             }
-            current = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            if (axWindowsMediaPlayer1.playState != WMPLib.WMPPlayState.wmppsPlaying)
+            {
+               serialPort1.Write("080");
+               serialPort1.Write("130");
+               serialPort1.Write("090");
+               serialPort1.Write("100");
+               return;
+            }
+            current = (float)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             while (current > upper)
             {
+                if (listposition == testParse.Count - 1) break;
                 listposition++;
                 listContent = testParse[listposition].Split(',');
                 lower = convertTimeToSec(listContent[0]);
                 upper = convertTimeToSec(listContent[1]);
-                if (listposition == testParse.Capacity) break;
             }
             while (current < lower)
             {
+                if (listposition == 0) break;
                 listposition--;
                 listContent = testParse[listposition].Split(',');
                 lower = convertTimeToSec(listContent[0]);
                 upper = convertTimeToSec(listContent[1]);
-                if (listposition == 0) break;
             }
             while (lower <= current && current <= upper)
             {
                 //send messages to Arduino
-                //serialPort1.Write(listContent[2]);
-               // serialPort1.Write(listContent[3]);
+                serialPort1.Write(listContent[2]);
+                serialPort1.Write(listContent[3]);
+                //Additional pins
+                serialPort1.Write(listContent[4]);
+                serialPort1.Write(listContent[5]);
+                //serialPort1.Write(listContent[6]);
+                //serialPort1.Write(listContent[7]);
                 this.label1.Text = "Lower: " + lower + ", Current: " + current + ", Upper: " + upper + " Send: " + listContent[2] + ", " + listContent[3];
                 break;
             }

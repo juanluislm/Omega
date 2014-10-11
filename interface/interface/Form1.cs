@@ -47,13 +47,13 @@ namespace @interface
         private void pin8on_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-                serialPort1.Write("081");
+                serialPort1.Write("091");
         }
 
         private void pin8off_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-                serialPort1.Write("080");
+                serialPort1.Write("090");
         }
 
 

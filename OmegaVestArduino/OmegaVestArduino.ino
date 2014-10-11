@@ -1,10 +1,17 @@
+#include <Servo.h>
+
 char inData[20]; // Allocate some space for the string
 char inChar=-1; // Where to store the character read
 byte index = 0; // Index into array; where to store the character
-int ledPin[2] = {13,8}; // the number of the LED pin
+int ledPin[2] = {13,8}; // the number of the LED pinServo
+Servo airServo;
+int airAngle = 25;
+int scentAngle = 60;
 
 void setup() {
     Serial.begin(9600);
+    airServo.attach(9);
+    airServo.write(90);
     pinMode(ledPin[0], OUTPUT); // set LED as output
     pinMode(ledPin[1], OUTPUT);
     digitalWrite(ledPin[0], LOW); //turn off LED
@@ -54,4 +61,10 @@ void loop()
         Serial.println("LED 8 off");
         digitalWrite(ledPin[1], LOW);
     } 
+    if (Comp("090")==0) {
+      airServo.write(90);
+    }
+    if (Comp("091")==0) {
+      airServo.write(90+airAngle);
+    }
 }
