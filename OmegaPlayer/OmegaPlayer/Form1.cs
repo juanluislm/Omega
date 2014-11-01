@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text;
+using System.IO.Ports;
+using System.Management;
 
 namespace OmegaPlayer
 {
@@ -25,13 +26,46 @@ namespace OmegaPlayer
         public Form1()
         {
             InitializeComponent();
-            this.Text = "Omega Player"; //Name of form
+            this.Text = "Omega Player";
+        }
+
+        private string AutodetectArduinoPort()
+        {
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
+                {
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
+                    {
+                        return deviceId;
+                    }
+                }
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
+            }
+
+            return null;
         }
 
         public void openPort()
         {
+            if (AutodetectArduinoPort() == null)
+            {
+                MessageBox.Show("Omega Vest not detected. Please check your connection and try again.");
+                return;
+            }
             if (!serialPort1.IsOpen)
             {
+                serialPort1.PortName = AutodetectArduinoPort();
                 serialPort1.Open();
                 MessageBox.Show("Omega Vest was connected successfully.");
             }
@@ -57,7 +91,8 @@ namespace OmegaPlayer
         private void findVideoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog d1 = new OpenFileDialog();
-            d1.Filter = "Movie Files|*.wmv|MPEG Files|*.mpeg|Avi Files|*.avi";
+            d1.Filter = "Media files|*.wmv;*mpeg;*.avi" + 
+                        "|WMV files|*.wmv|MPEG Files|*.mpeg|AVI Files|*.avi";
             d1.FilterIndex = 1;
             if (d1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -81,6 +116,12 @@ namespace OmegaPlayer
                         //Do nothing
                         return;
                     }
+                }
+                if (testParse != null) //Clear parsed file and set list index to 0
+                {
+                    testParse.Clear();
+                    timer1.Stop();
+                    listposition = 0;
                 }
                 if (File.Exists(csvname)) testParse = parseCSV(csvname);
                 listContent = testParse[listposition].Split(',');
@@ -131,9 +172,19 @@ namespace OmegaPlayer
             int minute = (someString[3] - '0') * 10 + someString[4] - '0';
             int second = (someString[6] - '0') * 10 + someString[7] - '0';
 
-            timeInSeconds = (float) hour * 3600 + minute * 60 + second;
+            timeInSeconds = (float)hour * 3600 + minute * 60 + second;
 
             return timeInSeconds;
+        }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPort();
+        }
+
+        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closePort();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -144,12 +195,13 @@ namespace OmegaPlayer
             }
             if (axWindowsMediaPlayer1.playState != WMPLib.WMPPlayState.wmppsPlaying)
             {
-               serialPort1.Write("080");
-               serialPort1.Write("130");
-               serialPort1.Write("090");
-               serialPort1.Write("100");
-               return;
+                serialPort1.Write("080");
+                serialPort1.Write("130");
+                serialPort1.Write("090");
+                serialPort1.Write("100");
+                return;
             }
+            //if (axWindowsMediaPlayer1.Ctlcontrols.currentPosition == null) return;
             current = (float)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             while (current > upper)
             {
@@ -167,7 +219,7 @@ namespace OmegaPlayer
                 lower = convertTimeToSec(listContent[0]);
                 upper = convertTimeToSec(listContent[1]);
             }
-            while (lower <= current && current <= upper)
+            while (lower < current && current < upper)
             {
                 //send messages to Arduino
                 serialPort1.Write(listContent[2]);
@@ -177,19 +229,9 @@ namespace OmegaPlayer
                 serialPort1.Write(listContent[5]);
                 //serialPort1.Write(listContent[6]);
                 //serialPort1.Write(listContent[7]);
-                this.label1.Text = "Lower: " + lower + ", Current: " + current + ", Upper: " + upper + " Send: " + listContent[2] + ", " + listContent[3];
+                //this.label1.Text = "Lower: " + lower + ", Current: " + current + ", Upper: " + upper + " Send: " + listContent[2] + ", " + listContent[3] + ", " + listContent[4] + ", " + listContent[5];
                 break;
             }
-        }
-
-        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openPort();
-        }
-
-        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            closePort();
         }
     }
 }

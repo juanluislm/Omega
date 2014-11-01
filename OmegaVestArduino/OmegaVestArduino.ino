@@ -3,9 +3,9 @@
 char inData[20]; // Allocate some space for the string
 char inChar=-1; // Where to store the character read
 byte index = 0; // Index into array; where to store the character
-int ledPin[2] = {13,8}; // the number of the LED pinServo
+int ledPin[3] = {13,10,8}; // the number of the LED pinServo
 Servo airServo;
-int airAngle = 25;
+int airAngle = 35;
 int scentAngle = 60;
 
 void setup() {
@@ -14,8 +14,10 @@ void setup() {
     airServo.write(90);
     pinMode(ledPin[0], OUTPUT); // set LED as output
     pinMode(ledPin[1], OUTPUT);
+    pinMode(ledPin[2], OUTPUT);
     digitalWrite(ledPin[0], LOW); //turn off LED
     digitalWrite(ledPin[1], LOW);
+    digitalWrite(ledPin[2], LOW);
 }
 
 char Comp(char* This) {
@@ -46,21 +48,23 @@ char Comp(char* This) {
 void loop()
 {
     if (Comp("131")==0) {
-        Serial.println("LED 13 on");
         digitalWrite(ledPin[0], HIGH);
     }
     if (Comp("130")==0) {
-        Serial.println("LED 13 off");
         digitalWrite(ledPin[0], LOW);
     }
-    if (Comp("081")==0) {
-         Serial.println("LED 8 on");
+    if (Comp("101")==0) {
          digitalWrite(ledPin[1], HIGH);
     }
-    if (Comp("080")==0) {
-        Serial.println("LED 8 off");
+    if (Comp("100")==0) {
         digitalWrite(ledPin[1], LOW);
-    } 
+    }
+    if (Comp("081")==0) {
+         digitalWrite(ledPin[2], HIGH);
+    }
+    if (Comp("080")==0) {
+        digitalWrite(ledPin[2], LOW);
+    }
     if (Comp("090")==0) {
       airServo.write(90);
     }
